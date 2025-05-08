@@ -1,0 +1,54 @@
+.section {
+
+  &__title {
+    margin: 0;
+    letter-spacing: 1px;
+
+    &-image {
+      width: 60px;
+      height: 60px;
+    }
+
+    &_column {
+      align-items: center;
+      column-gap: 20px;
+      display: flex;
+      justify-content: flex-start;
+
+      @media (max-width: $xl) {
+        row-gap: 16px;
+      }
+
+    }
+
+    &_row {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      row-gap: 20px;
+
+      @media (max-width: $xl) {
+        row-gap: 16px;
+      }
+    }
+  }
+
+  &__additional {
+    display: grid;
+    column-gap: 16px;
+    align-items: center;
+    grid-template-columns: 60px auto;
+    padding: 16px;
+
+    &-title {
+      font-size: 18px;
+      line-height: 150%;
+
+      @media (max-width: $md) {
+        font-size: 16px;
+      }
+    }
+  }
+}

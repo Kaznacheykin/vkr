@@ -1,0 +1,244 @@
+@use "sass:map";
+
+.modal {
+  position: fixed;
+  inset: 0 0 0 0;
+  visibility: hidden;
+  transition: all 1.2s;
+
+  &__overlay {
+    transition: all 1.2s;
+    background-color: map.get($gray-colors, '0');
+    position: fixed;
+    opacity: 0;
+    inset: 0 0 0 0;
+  }
+
+  &__inner {
+    transition: all 1.2s;
+  }
+
+  &__header {
+    padding: 10px 15px;
+    border-bottom: 1px solid map.get($gray-colors, '8');
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 30px;
+    line-height: 30px;
+
+    @media (max-width: $lg) {
+      font-size: 20px;
+    }
+  }
+
+  &__close {
+    padding: 0;
+  }
+
+  &_open {
+    visibility: visible;
+
+    &.modal_visible {
+      &>.modal__overlay {
+        opacity: .7;
+      }
+    }
+
+    &.modal_default, &.modal_callback {
+      z-index: 10000;
+      display: flex;
+
+      &>.modal__inner {
+        opacity: 1;
+      }
+    }
+
+    &.modal_menu {
+      &>.modal__inner {
+        top: 0;
+      }
+    }
+
+    &.modal_language {
+      &>.modal__inner {
+        top: 40%;
+      }
+    }
+  }
+
+  &_default {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    .modal__header {
+      padding: 25px 20px;
+      column-gap: 16px;
+    }
+
+    .modal__inner {
+      z-index: 1;
+      opacity: 0;
+
+      @media (max-width: $md) {
+        width: 80%;
+        min-width: auto;
+      }
+
+      @media (max-width: $sm) {
+        width: 95%;
+      }
+    }
+
+    .modal__content {
+      padding: 20px;
+    }
+  }
+
+  &_callback {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    .modal__header {
+      justify-content: flex-end;
+      border-bottom: none;
+      padding: 15px  15px 0 15px;
+    }
+
+    .modal__inner {
+      z-index: 1;
+      opacity: 0;
+
+      @media (max-width: $md) {
+        width: 80%;
+        min-width: auto;
+      }
+
+      @media (max-width: $sm) {
+        width: 95%;
+      }
+    }
+
+    .modal__content {
+      padding: 15px 48px 48px 48px;
+      display: grid;
+      justify-content: center;
+      grid-row-gap: 16px;
+
+      @media (max-width: $md) {
+        padding: 0 16px 16px 16px;
+      }
+
+      &>svg {
+        margin-bottom: 8px;
+      }
+
+      h4 {
+        font-size: 32px;
+        line-height: 140%;
+
+        @media (max-width: $xl) {
+          font-size: 28px;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 140%;
+
+        @media (max-width: $xl) {
+          font-size: 16px;
+        }
+      }
+
+      .button {
+        margin-top: 24px;
+      }
+    }
+  }
+
+  &_menu {
+    z-index: 1000;
+    top: 85px;
+
+    @media (min-width: $md) {
+      top: 105px;
+    }
+
+    &>.modal__overlay {
+      top: 85px;
+      background: none;
+    }
+
+    &>.modal__inner {
+      position: absolute;
+      top: 100%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow-y: auto;
+
+      &>.modal__footer {
+        padding: 24px 16px 24px 16px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        align-items: center;
+
+        &>.button {
+          width: 30%;
+          @media (max-width: $lg) {
+            width: 50%
+          }
+          @media (max-width: $md) {
+            width: 70%
+          }
+          @media (max-width: $sm) {
+            width: 100%
+          }
+        }
+
+        &>form {
+          padding-top: 24px;
+        }
+      }
+    }
+
+
+  }
+
+  &_language {
+    z-index: 1000;
+
+    .modal__inner {
+      position: absolute;
+      top: 100%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .modal__content {
+      padding: 16px;
+      height: calc(100% - 51px);
+      overflow-y: auto;
+
+      .select-custom__inner {
+        row-gap: 10px;
+
+        .language__item {
+          padding: 10px 16px;
+          border-radius: 10px;
+          border: 1px solid map.get($gray-colors, '8');
+        }
+      }
+    }
+  }
+}

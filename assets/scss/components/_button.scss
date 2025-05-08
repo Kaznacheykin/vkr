@@ -1,0 +1,151 @@
+@use "sass:map";
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  column-gap: 8px;
+  text-decoration: none;
+  transition: $transition;
+
+  &_clear {
+    background: none;
+    outline: none;
+    border: none;
+  }
+
+  &_rounded_6 {
+    border-radius: 6px;
+  }
+
+  &_rounded_30 {
+    border-radius: 30px;
+  }
+
+  &_rounded_40 {
+    border-radius: 40px;
+  }
+
+  &_size_s {
+    padding: 5px 15px;
+    height: 40px;
+  }
+
+  &_size_m {
+    padding: 10px 20px;
+    min-height: 50px;
+  }
+
+  &_size_l {
+    padding: 13px 20px;
+    min-height: 56px;
+  }
+
+  &:active {
+    opacity: .5 !important;
+  }
+
+  &>.loader {
+    height: 70%;
+    min-height: 27px;
+    aspect-ratio: 1 / 1;
+    border: 3px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &_menu {
+    .hamburger {
+      width: 20px;
+      height: 35px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: .5s ease-in-out;
+      cursor: pointer;
+
+      span {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: $white;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+      }
+
+      span:nth-child(1) {
+        top: 11px;
+      }
+      span:nth-child(2),
+      span:nth-child(3) {
+        top: 17px;
+      }
+      span:nth-child(4) {
+        top: 23px;
+      }
+    }
+
+    &.open .hamburger span:nth-child(1) {
+      top: 18px;
+      width: 0;
+      left: 50%;
+    }
+
+    &.open .hamburger span:nth-child(2) {
+      transform: rotate(45deg);
+    }
+
+    &.open .hamburger span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    &.open .hamburger span:nth-child(4) {
+      top: 18px;
+      width: 0;
+      left: 50%;
+    }
+  }
+
+  &_back-start {
+    position: fixed;
+    right: 0;
+    bottom: 80px;
+    z-index: 11;
+    padding: 10px 11px;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(56,176,228, .8);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    &.show {
+      visibility: visible;
+    }
+
+    &.visible {
+      opacity: 1;
+    }
+
+  }
+}

@@ -1,0 +1,33 @@
+.inner {
+  margin: 0 auto;
+  max-width: $containerWidth;
+  padding: 0;
+  display: flex;
+  width: 100%;
+
+  &_grid {
+    display: grid;
+  }
+
+  @media (max-width: $xl) {
+    padding: 0 $containerPaddingL;
+  }
+
+  @media (max-width: $md) {
+    padding: 0 $containerPaddingM;
+  }
+
+  &_splitted {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  &_splitted_start {
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+
+  &_column {
+    flex-direction: column;
+  }
+}

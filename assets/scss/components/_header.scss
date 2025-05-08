@@ -1,0 +1,270 @@
+@use "sass:map";
+.header {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+  height: 80px;
+  border-radius: 50px;
+  margin: 0 auto;
+  max-width: $headerWidth;
+  padding: 0 20px 0 30px;
+  background-color: $white;
+
+  @media (min-width: $xl) and (max-width: 1540px) {
+    column-gap: 30px;
+  }
+
+
+  // Fixed outline with border-radius for Safari <16.4
+  // Work solution from https://medium.com/@jeandesravines/use-border-radius-and-outline-simultaneously-on-safari-14ce92889e1f
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border: 1px solid rgba(46, 47, 57, .1);
+    border-radius: 51px;
+    z-index: -1;
+  }
+
+  @media (min-width: 1900px) {
+    display: grid;
+    grid-template-columns: 650px auto 650px;
+  }
+
+  @media (max-width: $md) {
+    height: 60px;
+    padding: 0 10px 0 20px;
+  }
+
+  @media (max-width: $sm) {
+    column-gap: 12px;
+  }
+
+  &_is-searching {
+    .header__logo, .header__menu-list, .header__user-part {
+      opacity: 0;
+    }
+
+    .header__search {
+      z-index: 10;
+      opacity: 1;
+    }
+  }
+
+  &_fixed {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    top: 20px;
+    z-index: 10000;
+
+    @media(max-width: $md) {
+      top: 10px;
+      right: 10px;
+      left: 10px;
+    }
+  }
+
+  &__logo {
+    width: 280px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 13px;
+
+    &>a {
+      display: flex;
+      align-items: center;
+    }
+
+    .header__logo-default {
+      display: flex;
+    }
+
+    .header__logo-small {
+      display: none;
+    }
+
+    @media (max-width: 1560px) {
+      width: 100px;
+
+      .header__logo-default {
+        display: none;
+      }
+
+      .header__logo-small {
+        display: flex;
+      }
+    }
+
+    @media (max-width: $xl) {
+      .header__logo-blog>img {
+        max-width: 54px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .header__logo-default {
+        display: none;
+      }
+
+      .header__logo-small {
+        display: flex;
+      }
+    }
+
+
+    &-image {
+      width: 100%;
+    }
+
+    @media (max-width: $md) {
+      width: 152px;
+    }
+  }
+
+  &__menu-list {
+    display: flex;
+    column-gap: 30px;
+    row-gap: 30px;
+    justify-content: center;
+
+    @media (min-width: $xl) and (max-width: 1540px) {
+      column-gap: 12px;
+    }
+
+    @media (max-width: 1260px) {
+      display: none;
+    }
+
+    .button {
+      padding: 10px 0;
+    }
+
+  }
+
+  &__user-part {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    column-gap: 10px;
+
+    @media (min-width: $xl) and (max-width: 1540px) {
+      column-gap: 5px;
+    }
+
+    .button_menu {
+      @media (min-width: 1260px) {
+        display: none;
+      }
+    }
+  }
+
+  &__account {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    @media (min-width: $xl) and (max-width: 1540px) {
+      column-gap: 5px;
+    }
+
+    @media (max-width: $md) {
+      .button {
+        padding: 5px 7px;
+      }
+    }
+
+    @media (max-width: $sm) {
+      column-gap: 0;
+    }
+  }
+
+  &__search {
+    transition: $transition;
+    display: grid;
+    grid-column-gap: 40px;
+    align-items: center;
+    z-index: -1000;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 80px;
+    border-radius: 50px;
+    margin: 0 auto;
+    max-width: $headerWidth;
+    padding: 0 20px 0 30px;
+    background-color: $white;
+
+    @media (min-width: $md) {
+      grid-template-columns: 50px auto 50px;
+    }
+
+    @media (max-width: $md) {
+      grid-template-columns: 1fr;
+      height: 60px;
+      padding: 0 10px 0 20px;
+    }
+
+    &-logo {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: $md) {
+        display: none;
+      }
+    }
+    &>div {
+      position: relative;
+
+      &>.button {
+        @media (min-width: $md) {
+          position: absolute;
+          left: calc(100% + 5px);
+        }
+
+        &>span {
+          width: max-content;
+        }
+
+        @media (max-width: $md) {
+          font-size: 14px;
+        }
+      }
+
+    }
+  }
+
+  .dropdown__content {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  &__signup, &__search-btn {
+    @media (max-width: $md) {
+      span {
+        display: none;
+      }
+
+      &.button {
+        background-color: transparent;
+        border: none;
+
+        &:hover {
+
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
+  }
+
+}

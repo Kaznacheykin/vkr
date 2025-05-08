@@ -27,7 +27,7 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
+<script src="http://localhost:7700/main.js"></script>
 <?php wp_footer(); ?>
 
 </body>

@@ -15,8 +15,9 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+		<link rel="stylesheet" href="http://localhost:7700/critical.css" type="text/css" />
+		<link rel="stylesheet" href="http://localhost:7700/main.css" type="text/css" />
+		<link rel="stylesheet" href="http://localhost:7700/vendors.css" type="text/css" />
 	<?php wp_head(); ?>
 </head>
 

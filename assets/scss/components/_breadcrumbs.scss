@@ -1,0 +1,45 @@
+@use "sass:map";
+
+.breadcrumbs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 8px;
+  color: map.get($gray-colors, '5');
+  opacity: .8;
+
+  p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8px;
+    row-gap: 8px;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 4px 12px;
+    line-height: 140%;
+    border-radius: 40px;
+    border: 1px solid map.get($gray-colors, '8');
+
+    .text {
+      color: map.get($gray-colors, '5');
+      font-size: 14px;
+      opacity: .8;
+    }
+
+    &:hover {
+      opacity: 1;
+      border: 1px solid map.get($gray-colors, '8');
+
+      .text {
+        opacity: 1;
+      }
+    }
+  }
+}

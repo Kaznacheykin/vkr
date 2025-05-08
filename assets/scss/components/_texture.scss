@@ -1,0 +1,45 @@
+.texture {
+  width: 100%;
+  z-index: 3;
+
+  &__lines {
+    display: flex;
+    position: relative;
+
+    img {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+
+    &_blog-main {
+      height: 120px;
+      margin: -60px 0 -60px 0;
+
+      @media (max-width: $xl) {
+        height: 100px;
+        margin: -30px 0 -30px 0;
+      }
+    }
+  }
+
+  &__ellipse {
+    height: 90px;
+    margin-top: -2px;
+
+    img {
+      width: 100%;
+      max-height: 100%;
+    }
+
+    @media (max-width: $xl) {
+      height: 60px;
+    }
+
+    @media (max-width: $sm) {
+      height: 30px;
+    }
+
+  }
+
+}

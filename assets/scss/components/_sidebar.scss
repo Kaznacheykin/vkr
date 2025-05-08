@@ -1,0 +1,132 @@
+@use "sass:map";
+
+.sidebar {
+  padding-top: 40px;
+
+  @media (max-width: $xl) {
+    padding-top: 0;
+  }
+
+  &__button-default {
+    display: block;
+  }
+
+  &__button-open {
+    display: none;
+  }
+
+  .button_toggler {
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    position: fixed;
+    right: 0;
+    top: 105px;
+    z-index: 901;
+
+    @media (min-width: $xl) {
+      display: none;
+    }
+  }
+
+  &_open {
+    .button_toggler {
+      .sidebar__button-default {
+        display: none;
+      }
+
+      .sidebar__button-open {
+        display: block;
+      }
+    }
+
+    .sidebar__inner {
+      opacity: 1;
+      right: 10px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+
+    @media (max-width: $xl) {
+      opacity: 0;
+      height: calc(100vh - 150px);
+      overflow-y: scroll;
+      position: fixed;
+      right: -530px;
+      top: 130px;
+      transition: all .3s ease;
+      z-index: 900;
+      box-shadow: $shadowM;
+      background-color: $white;
+      max-width: 350px;
+      padding: 16px;
+      border-radius: 20px;
+    }
+
+    @media (min-width: $xl) {
+      height: 100%;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 16px;
+
+    &.table-contents {
+      .toc-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        row-gap: 10px;
+        flex-direction: column;
+        margin: 0;
+
+        .toc-link {
+          font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+          border-radius: 10px;
+          width: 100%;
+          background-color: map.get($gray-colors, '10');
+          padding: 12px 16px;
+          font-size: 16px;
+          color: map.get($gray-colors, '2');
+          font-weight: 600;
+          display: flex;
+          text-decoration: none;
+
+
+        }
+      }
+    }
+
+    &.category-posts {
+      &>div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        &>.link {
+          height: 38px;
+        }
+      }
+    }
+
+    &.tags {
+
+      &>div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 120%;
+    }
+  }
+}

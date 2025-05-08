@@ -1,0 +1,65 @@
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &_clear {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &_space-between.list{
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &_horizontal {
+    flex-direction: row;
+
+    &.list_start {
+      justify-content: flex-start;
+    }
+  }
+
+  &_vertical {
+    flex-direction: column;
+
+    &.list_start {
+      align-items: flex-start;
+    }
+  }
+
+  &_has_flag_icon {
+    .list__item {
+      display: flex;
+      column-gap: 10px;
+    }
+
+    &.flag_blue {
+      .list__item:before {
+        content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQwNDZfMTY1MTUpIj4KPHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjAxIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTYgMTMuMDAwMkwxMS45MTM2IDcuOTk5NTVMMTUuOTk5NCAzLjAwMDE4SDAuMDQzNTY0OEwwIDEzLjAwMDJIMTZaTTYgMTBDNy4xMDQ1NyAxMCA4IDkuMTA0NTcgOCA4QzggNi44OTU0MyA3LjEwNDU3IDYgNiA2QzQuODk1NDMgNiA0IDYuODk1NDMgNCA4QzQgOS4xMDQ1NyA0Ljg5NTQzIDEwIDYgMTBaIiBmaWxsPSIjMzhCMEU0Ii8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfNDA0Nl8xNjUxNSI+CjxyZWN0IHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K);
+        height: 16px;
+        min-width: 16px;
+        width: 16px;
+      }
+    }
+
+    &.flag_white {
+      .list__item:before {
+        content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNi4wNjg1IDEyLjI3NjNMMTMuMjEzMiA4LjUzNzY5TDE2LjA2ODEgNC44SDUuMzMwMjVWMTIuMjc2M0gxNi4wNjg1Wk0yLjEzMDI5IDJIMjEuNzMwMkwxNi43MzY1IDguNTM3NzlMMjEuNzMwMiAxNS4wNzYzSDUuNDYwNTRMNS4zMzAyNCAyMkgyTDIuMTMwMjkgMloiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=);
+        height: 24px;
+        min-width: 24px;
+        width: 24px;
+      }
+    }
+  }
+
+
+}

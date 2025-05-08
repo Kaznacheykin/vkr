@@ -1,0 +1,264 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+
+  @media (max-width: $lg) {
+    padding: 16px;
+  }
+
+  @media (max-width: $sm) {
+    padding: 20px 16px;
+  }
+
+  &__paragraph {
+    font-size: 18px;
+    line-height: 140%;
+  }
+
+  &__header {
+    display: flex;
+
+    &.column {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    line-height: 140%;
+    transition: $transition;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .list {
+      row-gap: 8px;
+
+      .text {
+        line-height: 150%;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+  }
+
+  &_videos.card {
+    padding: 0;
+
+    .card__header {
+      row-gap: 16px;
+    }
+  }
+
+  &_targeting.card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &_tools.card {
+    display: grid;
+    grid-template-columns: 60px auto;
+    grid-column-gap: 24px;
+
+    .card__title {
+      padding-bottom: 16px;
+      justify-content: space-between;
+    }
+
+    .card__paragraph {
+      @media (max-width: $xl) {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: $lg) {
+      padding: 20px 16px;
+    }
+
+    @media (max-width: $xl) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 60px auto;
+      grid-row-gap: 16px;
+      grid-column-gap: 0;
+    }
+  }
+
+  &_conferences.card {
+    padding: 16px 16px 24px 16px;
+
+    .card__content {
+      row-gap: 16px;
+      padding: 16px 5px 0 5px;
+    }
+
+    .card__footer {
+      padding: 0 5px;
+    }
+
+    .card__paragraph {
+      padding-bottom: 16px;
+
+      @media (max-width: $xl) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &_advantages.card {
+    row-gap: 35px;
+
+    .card__header {
+      row-gap: 20px;
+      flex-direction: column;
+    }
+
+    .card__title {
+
+      column-gap: 16px;
+      margin: 0;
+
+      &-image {
+        width: 48px;
+        height: 48px;
+      }
+
+    }
+  }
+
+  &_why.card {
+    .card__header {
+      padding-bottom: 16px;
+    }
+
+    .card__subtitle {
+      font-size: 18px;
+      line-height: 140%;
+      padding-bottom: 10px;
+    }
+
+    .card__paragraph {
+      padding-bottom: 24px;
+    }
+
+    @media (max-width: $lg) {
+      padding: 20px 16px;
+    }
+  }
+
+  &_article.card {
+    padding: 16px 16px 24px 16px;
+
+    .card__header {
+      row-gap: 16px;
+    }
+  }
+
+  &_reasons.card {
+    @media (max-width: $lg) {
+      padding: 20px 16px;
+    }
+
+    .card__header {
+      flex-direction: column;
+      row-gap: 16px;
+    }
+
+    .card__title {
+      margin: 0;
+      padding-bottom: 20px;
+      max-width: 350px;
+    }
+  }
+
+  &_benefits.card {
+    padding: 45px 24px;
+
+    @media (max-width: $lg) {
+      padding: 20px 16px;
+    }
+
+    .card__header {
+      flex-direction: column;
+      row-gap: 16px;
+    }
+
+    .card__title {
+      margin: 0;
+      padding-bottom: 0;
+
+      @media (max-width: $lg) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &_career.card {
+    padding: 40px 24px;
+
+    @media (max-width: $lg) {
+      padding: 24px 16px;
+    }
+
+    .card__header {
+      flex-direction: column;
+      row-gap: 16px;
+    }
+
+    .card__title {
+      margin: 0;
+      padding-bottom: 0;
+
+      @media (max-width: $lg) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &_rtb-partner.card {
+    padding: 24px 24px 45px;
+
+    @media (max-width: $lg) {
+      padding: 20px 16px;
+    }
+
+    @media (max-width: $sm) {
+      padding: 24px 16px;
+    }
+
+    .card__header {
+      flex-direction: column;
+      row-gap: 16px;
+    }
+
+    .card__title {
+      margin: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &_steps.card {
+    @media (max-width: $lg) {
+      padding: 20px 16px;
+    }
+
+    .card__header {
+      flex-direction: column;
+      row-gap: 24px;
+    }
+
+    .card__title {
+      margin: 0;
+      padding-bottom: 16px;
+    }
+  }
+
+}

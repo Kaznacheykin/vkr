@@ -1,0 +1,130 @@
+@use "sass:map";
+
+.text {
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  margin: 0;
+
+  @each $index, $value in $gray-colors {
+      &_gray_#{$index} {
+        color: $value;
+      }
+
+  }
+
+
+  &_red {
+    color: $red-text;
+  }
+
+
+
+  &_white {
+    color: $white;
+  }
+
+  &_purple {
+    color: #9215CD;
+  }
+
+  &_size_xs {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  &_size_s {
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  &_size_m {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &_size_m_fixed {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &_size_m_fixed {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &_size_xxxl {
+    font-size: 48px;
+    line-height: 120%;
+
+    @media (max-width: $lg) {
+      font-size: 36px;
+    }
+
+    @media (max-width: $md) {
+      font-size: 28px;
+    }
+  }
+
+  &_size_l {
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  &_size_l_fixed {
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  &_size_xl{
+    font-size: 20px;
+    line-height: 150%;
+
+    @media (max-width: $lg) {
+      font-size: 18px;
+    }
+
+    @media (max-width: $md) {
+      font-size: 16px;
+    }
+  }
+
+  &_upper {
+    text-transform: uppercase;
+  }
+
+  &_weight_200 {
+    font-weight: 200;
+  }
+
+  &_weight_300 {
+    font-weight: 300;
+  }
+
+  &_weight_400 {
+    font-weight: 400;
+  }
+
+  &_weight_500 {
+    font-weight: 500;
+  }
+
+  &_weight_600 {
+    font-weight: 600;
+  }
+
+  &_weight_700 {
+    font-weight: 700;
+  }
+
+  &_weight_800 {
+    font-weight: 800;
+  }
+
+  &_weight_900 {
+    font-weight: 900;
+  }
+
+  &_centered {
+    text-align: center;
+  }
+
+}

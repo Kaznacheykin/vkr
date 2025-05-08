@@ -1,0 +1,16 @@
+.select-custom {
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  &__option {
+    cursor: pointer;
+
+    &-selected.select-custom__option{
+      display: none;
+    }
+  }
+
+}

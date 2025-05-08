@@ -1,0 +1,71 @@
+@use "sass:map";
+
+.cookie {
+  position: fixed;
+  max-width: 805px;
+  width: 100%;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  padding: 13px 15px;
+  background-color: map.get($gray-colors, '2');
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  align-items: center;
+  z-index: 101;
+  border-radius: 80px;
+
+  @media (max-width: $lg) {
+    width: auto;
+  }
+
+  @media (max-width: $sm) {
+    width: auto;
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+    padding: 16px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 44px auto;
+    grid-column-gap: 16px;
+    align-items: center;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    margin-left: 5px;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 130%;
+
+    @media (max-width: $sm) {
+      font-size: 14px;
+    }
+  }
+
+  &__action {
+    font-size: 16px;
+    line-height: 120%;
+    height: 32px;
+    min-width: 105px;
+
+
+    @media (max-width: $md) {
+    }
+
+    @media (max-width: $sm) {
+      font-size: 14px;
+    }
+  }
+}

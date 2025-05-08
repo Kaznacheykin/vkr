@@ -1,0 +1,56 @@
+$white: #fff;
+$red: #E63636;
+
+
+//Danger
+$red: #e73636;
+$red-text: #B41010;
+$red-border: #D99C9C;
+$red-faint: #F6DADA;
+//Success
+$green: #39b54a;
+$green-text: #558855;
+$green-border: #A9C59E;
+$green-dirty: #bdd8c1;
+$green-light: #87E396;
+$green-faint: #EAF9E3;
+//Info
+$aqua: #E3F0F9;
+$aqua-text: #517289;
+$aqua-border: #ABC7DA;
+//Warning
+$yellow: #f0ad4e;
+$yellow-text: #896B3A;
+$yellow-border: #DAD9B2;
+$yellow-faint: #F9F7E3;
+
+$gray-colors: (
+        "0": #1D1E24,
+        "1": #0D0D0F,
+        "2": #2E2F39,
+        "3": #3e414d,
+        "4": #484A55,
+        "5": #666874,
+        "6": #91929B,
+        "7": #C8C8D1,
+        "8": #E5E6ED,
+        "9": #F2F4F8,
+        "10": #F8F9FC,
+);
+
+$shadowM: 0 2px 8px rgba(0,0,0,.1);
+$shadowL: 0 4px 12px rgba(0,0,0,.2);
+
+$transition: all .3s ease;
+
+$containerWidth: 1200px;
+$headerWidth: 1980px;
+
+$containerPaddingL: 10px;
+$containerPaddingM: 16px;
+
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 478px;

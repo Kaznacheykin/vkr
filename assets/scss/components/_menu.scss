@@ -1,0 +1,44 @@
+@use "sass:map";
+
+.menu {
+  &__item {
+    font-size: 16px;
+
+    .accordion__content .button {
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .dropdown__content .link {
+      font-size: 14px;
+    }
+  }
+
+
+  &_mobile {
+
+    .menu__item>.button, .accordion__content .button {
+      border-bottom: 1px solid map.get($gray-colors, '8');
+      padding: 0 16px;
+      height: 52px;
+      width: 100%;
+    }
+
+    .menu__item {
+      .accordion__content {
+        .button {
+          background-color: map.get($gray-colors, '10');
+        }
+      }
+
+      .accordion__arrow {
+        height: 52px;
+      }
+
+      .button {
+        justify-content: space-between;
+      }
+    }
+  }
+
+}
